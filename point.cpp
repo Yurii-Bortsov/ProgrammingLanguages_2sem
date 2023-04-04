@@ -2,8 +2,8 @@
 
 Point::Point(double valueX, double valueY)
 {
-    this -> x = valueX;
     this -> y = valueY;
+    this -> x = valueX;
 }
 
 

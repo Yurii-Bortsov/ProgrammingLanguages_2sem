@@ -6,6 +6,6 @@ struct Point {
         Point();
         double x;
         double y;
-        Point(double valueX, double valueY);
         void Print();
+        Point(double valueX, double valueY);
 };
