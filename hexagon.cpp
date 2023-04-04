@@ -14,8 +14,8 @@ Hexagon::Hexagon(Point centre, const double lenght)
         for (int i = 0; i < 6; i++)
         {
         double  angle = ((90 + 60 * i) * M_PI) / 180;
-        double y = round((lenght * sin(angle) + centre.y) * 10) / 10;
         double x = round((lenght * cos(angle) + centre.x) * 10) / 10;
+        double y = round((lenght * sin(angle) + centre.y) * 10) / 10;
         Point a(x, y);
         hexagon_top.push_back(a);
         }
