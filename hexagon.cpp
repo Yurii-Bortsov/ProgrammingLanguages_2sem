@@ -1,8 +1,5 @@
 #include "hexagon.h"
 #include <cmath>
-#include <vector>
-
-std::vector <Point> hexagon_top;
 
 Hexagon::Hexagon(Point centre, const double lenght)
 {
@@ -22,16 +19,24 @@ Hexagon::Hexagon(Point centre, const double lenght)
     }
     else
     {
-        std::cerr << "Error; edge length can't be negative";
+        std::cerr << "Ошибка. Длина не может быть отрицательной.";
     }
 }
 
-void Hexagon::Print_Hex_Points()
+const double Hexagon::Get_lenght()
+{
+    std::cout << "Введите длину ребра: ";
+    std::cin >> lenght;
+
+    return lenght;
+}
+
+void Hexagon::PrintHexPoints()
 {
     for (int i = 0; i < 6; i++)
     {
         std::cout << "Точка " << char(i+65) << " = ";
-        hexagon_top.at(i).Print();
+        std::cout << hexagon_top.at(i);
     }
 }
 
