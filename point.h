@@ -11,7 +11,7 @@ struct Point {
         * @param valueY Координата Y точки.
         */
         Point(const double valueX, const double valueY);
-        
+
         /**
          * @brief Оператор вывода объекта Point в поток.
          * @param os Поток вывода.

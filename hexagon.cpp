@@ -24,7 +24,7 @@ void Hexagon::Math()
 
 double Hexagon::Area()
 {
-    return (round((3 * sqrt(3) * lenght * lenght /2) * 10) / 10);
+    return (3 * sqrt(3) * lenght * lenght /2);
 }
 
 double Hexagon::Perimeter()
