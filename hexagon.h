@@ -4,8 +4,8 @@
 
 class Hexagon {
     private:
-        double lenght; // длина ребра
-        Point centre = {0 , 0}; // координаты центра гексагона
+        const double lenght; // длина ребра
+        const Point centre; // координаты центра гексагона
         std::vector<Point> hexagon_top; // список вершин гексагона
     public:
         /**
@@ -14,37 +14,36 @@ class Hexagon {
          * @param lenght Длина ребра шестиугольника.
          */
         Hexagon(const Point centre, const double lenght);
-        
-        /**
-         * @brief Вывод на экран координат вершин шестиугольника.
-         */
-        void PrintHexPoints();
 
         /**
+         * @brief Вычисляет координаты вершин гексагона и добавляет их в vector.
+         * 
+        */
+        void Math();
+        
+        /**
          * @brief Вычисление площади шестиугольника.
-         * @param lenght Длина ребра шестиугольника.
          * @return Площадь шестиугольника.
          */
-        double Area(const double lenght);
+        double Area();
 
         /**
          * @brief Вычисление периметра шестиугольника.
-         * @param lenght Длина ребра шестиугольника.
          * @return Периметр шестиугольника.
          */
-        double Perimeter(const double lenght);
+        double Perimeter();
 
         /**
          * @brief Вычисление радиуса описанной окружности.
-         * @param lenght Длина ребра шестиугольника.
          * @return Радиус описанной окружности.
          */
-        double RadiusOfCircle(const double lenght);
+        double RadiusOfCircle();
 
         /**
-         * @brief Получение длины ребра шестиугольника.
-         * @return Длина ребра шестиугольника.
+         * @brief Оператор вывода объекта Hexagon в поток.
+         * @param os Поток вывода.
+         * @param hexagon Объект типа Hexagon, который нужно вывести.
+         * @return Поток вывода.
          */
-        const double Get_lenght();
-
+        friend std::ostream& operator << (std::ostream& os, const Hexagon& hexagon);
 };
