@@ -23,35 +23,35 @@ const void Hexagon::Math()
     }
 }
 
-const double Hexagon::Angle(const unsigned int i)
+double Hexagon::Angle(const unsigned int i) const
 {
     double  angle = ((90 + 60 * i) * M_PI) / 180;
     return angle;
 }
 
-const double Hexagon::VertexX(double angle)
+double Hexagon::VertexX(double angle) const
 {
     double x = lenght * cos(angle) + centre.x;
     return x;
 }
 
-const double Hexagon::VertexY(double angle)
+double Hexagon::VertexY(double angle) const
 {
     double y = lenght * sin(angle) + centre.y;
     return y;
 }
 
-const double Hexagon::Area()
+double Hexagon::Area() const
 {
     return (3 * sqrt(3) * lenght * lenght /2);
 }
 
-const double Hexagon::Perimeter()
+double Hexagon::Perimeter() const
 {
     return (lenght * 6);
 }
 
-const double Hexagon::RadiusOfCircle()
+double Hexagon::RadiusOfCircle() const
 {
     return lenght;
 }
@@ -59,7 +59,7 @@ const double Hexagon::RadiusOfCircle()
 
 std::ostream& operator << (std::ostream& os, const Hexagon& hexagon)
 {
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < hexagon.vertexes; i++)
     {
         os << "Точка " << char(i+65) << " = " << hexagon.hexagon_top.at(i);
     }
