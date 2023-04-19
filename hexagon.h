@@ -4,10 +4,34 @@
 
 class Hexagon {
     private:
-        const double lenght; // длина ребра
-        const Point centre; // координаты центра гексагона
-        std::vector<Point> hexagon_top; // список вершин гексагона
+        const double lenght;
+        const Point centre;
+        std::vector<Point> hexagon_top;
+        const int vertexes = 6;
+
+        /**
+         * @brief Функция рассчитывает, на какой угол надо повернуть радиус-вектор, чтобы перейти к следующей вершине шестиугольника.
+         * @param i Порядковый номер вершины.
+         * @return Угол, на который нужно поворачивать радиус-вектор.
+        */
+        const double Angle(const unsigned int i);
+
+        /**
+         * @brief Функция рассчитывает координату оси X вершины шестиугольника.
+         * @param angle Угол, на который поворачивается радиус-вектор.
+         * @return Координата оси X вершины.
+        */
+        const double VertexX(double angle);
+
+        /**
+         * @brief Функция рассчитывает координату оси Y вершины шестиугольника.
+         * @param angle Угол, на который поворачивается радиус-вектор.
+         * @return Координата оси Y вершины.
+        */
+        const double VertexY(double angle);
     public:
+
+
         /**
          * @brief Конструктор класса Hexagon.
          * @param centre Координаты центра шестиугольника.
@@ -18,25 +42,25 @@ class Hexagon {
         /**
          * @brief Вычисляет координаты вершин гексагона и добавляет их в vector.
          */
-        void Math();
+        const void Math();
         
         /**
          * @brief Вычисление площади шестиугольника.
          * @return Площадь шестиугольника.
          */
-        double Area();
+        const double Area();
 
         /**
          * @brief Вычисление периметра шестиугольника.
          * @return Периметр шестиугольника.
          */
-        double Perimeter();
+        const double Perimeter();
 
         /**
          * @brief Вычисление радиуса описанной окружности.
          * @return Радиус описанной окружности.
          */
-        double RadiusOfCircle();
+        const double RadiusOfCircle();
 
         /**
          * @brief Оператор вывода объекта Hexagon в поток.

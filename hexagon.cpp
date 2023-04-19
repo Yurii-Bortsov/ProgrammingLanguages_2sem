@@ -7,32 +7,51 @@ Hexagon::Hexagon(const Point centre, const double lenght):centre(centre), lenght
     {
         throw std::out_of_range("Введено неверное значение.");
     }
+    
     Math();
 }
 
-void Hexagon::Math()
+const void Hexagon::Math()
 {
-    for (int i = 0; i < 6; i++)
+    for (unsigned int i = 0; i < vertexes; i++)
     {
-    double  angle = ((90 + 60 * i) * M_PI) / 180;
-    double x = lenght * cos(angle) + centre.x;
-    double y = lenght * sin(angle) + centre.y;
-    Point a(x, y);
-    hexagon_top.push_back(a);
+        double angle = Angle(i);
+        double x = VertexX(angle);
+        double y = VertexY(angle);
+        Point a(x, y);
+        hexagon_top.push_back(a);
     }
 }
 
-double Hexagon::Area()
+const double Hexagon::Angle(const unsigned int i)
+{
+    double  angle = ((90 + 60 * i) * M_PI) / 180;
+    return angle;
+}
+
+const double Hexagon::VertexX(double angle)
+{
+    double x = lenght * cos(angle) + centre.x;
+    return x;
+}
+
+const double Hexagon::VertexY(double angle)
+{
+    double y = lenght * sin(angle) + centre.y;
+    return y;
+}
+
+const double Hexagon::Area()
 {
     return (3 * sqrt(3) * lenght * lenght /2);
 }
 
-double Hexagon::Perimeter()
+const double Hexagon::Perimeter()
 {
     return (lenght * 6);
 }
 
-double Hexagon::RadiusOfCircle()
+const double Hexagon::RadiusOfCircle()
 {
     return lenght;
 }
