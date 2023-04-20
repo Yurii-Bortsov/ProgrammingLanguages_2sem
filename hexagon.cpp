@@ -25,20 +25,17 @@ const void Hexagon::Math()
 
 double Hexagon::Angle(const unsigned int i) const
 {
-    double  angle = ((90 + 60 * i) * M_PI) / 180;
-    return angle;
+    return ((90 + 60 * i) * M_PI) / 180;
 }
 
 double Hexagon::VertexX(double angle) const
 {
-    double x = lenght * cos(angle) + centre.x;
-    return x;
+    return lenght * cos(angle) + centre.x;
 }
 
 double Hexagon::VertexY(double angle) const
 {
-    double y = lenght * sin(angle) + centre.y;
-    return y;
+    return lenght * sin(angle) + centre.y;
 }
 
 double Hexagon::Area() const
