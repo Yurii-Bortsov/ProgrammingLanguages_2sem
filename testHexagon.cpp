@@ -7,6 +7,7 @@ TEST(hexagon, lenghtOutOfRange)
     // arrange
     Point centre(0, 0);
     double length = -5.1;
+    
     // act & assert
     ASSERT_THROW(Hexagon hexagon(centre, length), std::out_of_range);
 }
