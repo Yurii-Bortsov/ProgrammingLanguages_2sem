@@ -2,52 +2,17 @@
 #include <gtest/gtest.h>
 #include "hexagon.h"
 
-TEST(point, int_value_x)
+TEST(point, equality)
 {
     // arrange
-    int i = -3;
+    Point first_point(-3.2, 3.14);
+    Point second_point(-3.2, 3.14);
 
     // act 
-    Point point(i, 0);
+    bool act = (first_point == second_point);
 
     // assert
-    ASSERT_EQ(point.x, i);
-}
-
-TEST(point, int_value_y)
-{
-    // arrange
-    int j = -3;
-
-    // act 
-    Point point(0, j);
-
-    // assert
-    ASSERT_EQ(point.y, j);
-}
-
-TEST(point, double_value_x)
-{
-    // arrange
-    double i = 3.14;
-
-    // act 
-    Point point(i, 0);
-
-    // assert
-    ASSERT_FLOAT_EQ(point.x, i);
-}
-
-TEST(point, double_value_y)
-{
-    // arrange
-    double j = -3.144;
-
-    // act 
-    Point point(0, j);
-
-    // assert
-    ASSERT_FLOAT_EQ(point.y, j);
+    ASSERT_EQ(true, act);
 }
 
 TEST(point, output)
