@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "math.h"
 
 struct Point {  
         const double x;

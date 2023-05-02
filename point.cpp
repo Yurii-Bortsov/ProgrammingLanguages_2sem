@@ -11,5 +11,5 @@ std::ostream& operator << (std::ostream& os, const Point& point)
 
 bool Point::operator == (const Point& point)
 {
-        return (point.x == x && point.y == y);
+        return (doubleAreEqual(x, point.x) && doubleAreEqual(y, point.y));
 }
