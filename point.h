@@ -34,4 +34,5 @@ struct Point {
          * @return true/false в зависимости от значений координат объектов класса Point.
         */
         bool operator != (const Point& point);
+
 };
