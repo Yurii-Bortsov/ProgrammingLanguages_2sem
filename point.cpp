@@ -16,7 +16,7 @@ bool Point::operator == (const Point& point)
 
 bool Point::operator != (const Point& point)
 {
-        if (doubleAreEqual(x, point.x) && doubleAreEqual(y, point.y) == false)
+        if ((doubleAreEqual(x, point.x) && doubleAreEqual(y, point.y)) == false)
         {
             return true;
         }
