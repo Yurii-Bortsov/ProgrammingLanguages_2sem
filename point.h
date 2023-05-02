@@ -22,9 +22,16 @@ struct Point {
         friend std::ostream& operator << (std::ostream& os, const Point& point);
 
         /**
-         * @brief Оператор сравнение двух объектов класса Point.
+         * @brief Оператор сравнения двух объектов класса Point.
          * @param point Объект класса Point
          * @return true/false в зависимости от значений координат объектов класса Point.
         */
         bool operator == (const Point& point);
+
+        /**
+         * @brief Оператор сравнения двух объектов класса Point.
+         * @param point Объект класса Point
+         * @return true/false в зависимости от значений координат объектов класса Point.
+        */
+        bool operator != (const Point& point);
 };

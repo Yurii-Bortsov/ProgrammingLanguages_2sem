@@ -13,3 +13,11 @@ bool Point::operator == (const Point& point)
 {
         return (doubleAreEqual(x, point.x) && doubleAreEqual(y, point.y));
 }
+
+bool Point::operator != (const Point& point)
+{
+        if (doubleAreEqual(x, point.x) && doubleAreEqual(y, point.y) == false)
+        {
+            return true;
+        }
+}
